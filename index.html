@@ -11,44 +11,194 @@
     <body>
         <div class="w-100 d-flex justify-content-center align-items-center my-5">
             <main>
-                <h1><img src='media/chainheal.jpg'> Restoration Shaman Mechanics Compendium</h1>
+                <h1 class="text-center"><img src='media/chainheal.jpg'> Restoration Shaman Mechanics Compendium</h1>
                 <h4 class="text-end">by Harrek</h4>
                 <div>
                     <div id="mechanicsTabs">
                         <ul class="nav nav-tabs">
-                            <li class="nav-item"><a class="nav-link" href='#mechanicsTabs-specMechanics'>Spec Mechanics</a></li>
+                            <li class="nav-item"><a class="nav-link first-tab" href='#mechanicsTabs-specMechanics'>Spec Mechanics</a></li>
                             <li class="nav-item"><a class="nav-link" href='#mechanicsTabs-heroTalentMechanics'>Hero Talent Mechanics</a></li>
                             <li class="nav-item"><a class="nav-link" href='#mechanicsTabs-knownBugs'>Known Bugs</a></li>
                         </ul>
                         <div id="mechanicsTabs-specMechanics" class="tab-content-container">
                             <div>
-                                <ul>
+                                <ul class="mechanics-list">
+                                    <li>
+                                        <h4>:chainHeal:</h5>
+                                        <ul>
+                                            <li>Starts on your target and then jumps on the path that would do the most overall effective hps.</li>
+                                            <li>:unleashLife: and :flowOfTheTides: increase the healing of the whole cast, while other healing buffs only increase the healing of the specific jump on a given target.</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>:healingRain:</h4>
+                                        <ul>
+                                            <li>Ticks on placement and on removal.</li>
+                                            <li>:acidRain: doesn't scale with haste. It also doesn't tick as soon as :healingRain: is put down.</li>
+                                            <li>:unleashLife: increases targets to 7 for both :healingRain: and :acidRain:.</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>:cloudburstTotem:</h4>
+                                        <ul>
+                                            <li>Doesn't collect healing from other totems, only from the shaman.</li>
+                                            <li>:chainHeal:s from :livelyTotems: and :totemicRebound: feed it, including the free :chainHeal: from casting :cloudburstTotem: itself.</li>
+                                            <li>:ascendance: duplicated healing doesn't feed into it, but the initial burst of healing from entering :ascendance: does. The same is true for :deeplyRootedElements: procs.</li>
+                                            <li>Healing when released is split evenly between all nearby allies that aren't at full HP.</li>
+                                            <li>:callOfTheAncestors: healing <b>does not</b> feed into it.</li>
+                                            <li>Healing from :whisperingWaves: <b>does not</b> feed into it.</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>:ascendance:</h4>
+                                        <ul>
+                                            <li>Duplicates healing coming from the shaman, not from totems.</li>
+                                            <li>Does work on healing from :livelyTotems:.</li>
+                                            <li><b>Does not</b> work on healing from :callOfTheAncestors: nor :whisperingWaves:.</li>
+                                            <li>Healing is applied split to injured targets near you, not as extra casts on the original target.</li>
+                                        </ul>
+                                    </li>
                                     <li>
                                         <h4>:waterTotemMastery:</h4>
                                         <ul>
-                                            <li>It's a 16% chance</li>
+                                            <li>16% chance on every :tidalWaves: consumption</li>
                                         </ul>
                                     </li>
                                     <li>
-                                        <h5>:riptide:</h4>
+                                        <h4>:deluge:</h4>
                                         <ul>
-                                            <li>Heals</li>
+                                            <li>"Affected by your healing rain" is simply people inside the :healingRain: area regardless of when :healingRain: last ticked.</li>
+                                            <li>For :chainHeal:, it only affects the heal on this specific target and doesn't increase subsequent jumps.</li>
                                         </ul>
                                     </li>
                                     <li>
-                                        <h5>:chainHeal:</h4>
+                                        <h4>:ancestralVigor:</h4>
                                         <ul>
-                                            <li>Heals</li>
+                                            <li>You maintain the same health % going up and down max hp.</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>:whisperingWaves:</h4>
+                                        <ul>
+                                            <li><b>Does not</b> feed into :cloudburstTotem: nor gets duplicated by :ascendance:.</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>Statistics</h4>
+                                        <ul>
+                                            <li>8 baseline mastery points.</li>
+                                            <li>:mastery: multiplier is 3.</li>
                                         </ul>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                         <div id="mechanicsTabs-heroTalentMechanics" class="tab-content-container">
-                            Hero Talents Mechanics Content
+                            <div>
+                                <ul class="mechanics-list">
+                                    <li>
+                                        <h4>:whirlingElements:</h5>
+                                        <ul>
+                                            <li>:whirlingWater: won't carry any :healingSurge: modifiers.</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>:totemicRebound:</h4>
+                                        <ul>
+                                            <li>Any totem is a valid jump target, even utility ones like :earthbindTotem:.</li>
+                                            <li>Is there isn't any totem in range, there is no rebound.</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>:callOfTheAncestors:</h4>
+                                        <ul>
+                                            <li>Ancestors use their own versions of your spells.</li>
+                                            <li>:latentWisdom: increases their spell power by 25%.</li>
+                                            <li>If playing :heedMyCall:, you can guarantee 100% uptime on one ancestor by using :unleashLife: on cooldown, and have 33% uptime on a second one by using :ancestralSwiftness: on cooldown.</li>
+                                            <li>Ancestor's :lavaBurst: will always crit regardless of if the target has :flameShock: or not.</li>
+                                            <li>Queueing :unleashLife: or :ancestralSwiftness: after a cast will make the ancestor spawned from it to respond to the spell you queued from.</li>
+                                        </ul>
+                                        <table class="table table-dark mt-4">
+                                            <thead>
+                                                <tr>
+                                                    <th>You Cast</th>
+                                                    <th>Ancestor Casts</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>:riptide:</td>
+                                                    <td>:ancestorHealingSurge:</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>:healingSurge:</td>
+                                                    <td>:ancestorHealingSurge:</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>:healingWave:</td>
+                                                    <td>:ancestorHealingWave:</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>:chainHeal:</td>
+                                                    <td>:ancestorChainHeal:</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>:unleashLife:</td>
+                                                    <td>:ancestorHealingSurge:</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>:cloudburstTotem:</td>
+                                                    <td>:ancestorChainHeal:</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>:healingRain:</td>
+                                                    <td>:ancestorChainHeal:</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>:healingTideTotem:</td>
+                                                    <td>:ancestorChainHeal:</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>:flameShock:</td>
+                                                    <td>:ancestorLavaBurst:</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>:lightningBolt:</td>
+                                                    <td>:ancestorLavaBurst:</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>:lavaBurst:</td>
+                                                    <td>:ancestorLavaBurst:</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>:chainLightning:</td>
+                                                    <td>:ancestorChainLightning:</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                         <div id="mechanicsTabs-knownBugs" class="tab-content-container">
-                            Known Bugs Content
+                            <div>
+                                <ul class="mechanics-list">
+                                    <li>:windBarrier: sometimes refreshes itself repeatedly.</li>
+                                    <li>:earthShield: does not properly stick to targets if :therazanesResilient: is talented when loading into a new instance.</li>
+                                    <li>:earthShield: can sometimes apply to more than two targets at the start of a new instance.</li>
+                                    <li>:creationCore: does not always correctly restore the last two totems used.</li>
+                                    <li>:tidecallersGuard: from :supportiveImbuements: stops working if you die until you reapply it.</li>
+                                    <li>:ancestralSwiftness: does not buff the damage from :acidRain:.</li>
+                                    <li>When using :spoutingSpirits:, :livelyTotems: will fire off two :chainHeal:s instead of the expected one. The first will happen when :spiritLinkTotem: is placed down and the second then the healing from :spoutingSpirits: occurs.</li>
+                                    <li>:tidewaters: does not feed :cloudburstTotem:.</li>
+                                    <li>:whisperingWaves: does not feed :cloudburstTotem: or :ascendance:.</li>
+                                    <li>:reactivity: makes :healingStreamTotem: heal the second target for 100% effectiveness, not 50% like the tooltip states.</li>
+                                    <li>Neither :healingWave: nor :healingSurge: modifiers apply to the target healed by :whirlingWater:.</li>
+                                    <li>:downpour: consumes :naturesSwiftness:/:ancestralSwiftness: despite being an instant cast. When this happens :downpour: will not cost mana. Other instant cast spells such as :riptide: don't consume the effect.</li>
+                                    <li>:lavaSurge: does not appear to have an increased chance to proc when :flameShock: is applied to multiple targets at the same time.</li>
+                                    <li>Using :lavaBurst: with :ancestralSwiftness: right after getting a :lavaSurge: proc will consume both the :ancestralSwiftness: and :lavaSurge: buffs on the same cast.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -58,8 +208,6 @@
         <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js" integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
         <script src="js/functions.js"></script>
-        <script src="js/wowhead-tooltip-replace.js"></script>
         <script>const whTooltips = {colorLinks: true, iconizeLinks: true, renameLinks: true, iconSize: true};</script>
-        <script src="https://wow.zamimg.com/js/tooltips.js"></script>
     </body>
 </html>

@@ -3,6 +3,10 @@ body {
     color: white;
 }
 
+main {
+    max-width: 1000px;
+}
+
 h1 {
     text-shadow: -3px -3px 5px black;
     -webkit-text-stroke: 0.5px black;
@@ -16,4 +20,10 @@ a {
     border: solid 1px white;
     border-radius: 0 0px 10px 10px;
     padding: 20px;
+}
+
+.mechanics-list > li {
+  margin: 15px 0;
+  border-bottom: 1px solid white;
+  padding: 0 0 20px 0;
 }
